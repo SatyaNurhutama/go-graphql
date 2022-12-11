@@ -1,0 +1,26 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  products: [Product!]!
+  search(name: String!): Product
+}
+
+type Mutation {
+  create(product: ProductInput!): Product!
+}
+
+input ProductInput {
+  name: String!
+  stock: Int!
+  price: Int!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  stock: Int!
+  price: Int!
+}
